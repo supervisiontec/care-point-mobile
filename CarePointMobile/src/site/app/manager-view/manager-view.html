@@ -1,0 +1,136 @@
+<div class="col-md-8" ng-show="ui.mode === 'DASHBOARD'">
+    <div class="col-md-12 no-padding">
+        <div class="widget bg-white no-padding">
+            <a href="javascript:;" class="block text-center relative p15">
+                <div class="widget-bg-icon">
+                    <i class="material-icons" style="font-size: 64px;">attach_money</i>
+                </div>
+                <div class="h5 mb0">
+                    <strong>TOTAL SALES</strong>
+                </div>
+            </a>
+
+            <div class="widget bg-green mb0 text-center no-radius" style="animation: 0.5s zoomIn">
+                <div class="widget-details">
+                    <div class="small bold text-uppercase"> TOTAL</div>
+                    <div class="h5 no-margin">{{model.viewVariables.totalIncome}}.00</div>
+                </div>
+
+                <div class="widget-details">
+                    <div class="small bold text-uppercase">PAID</div>
+                    <div class="h5 no-margin">{{model.viewVariables.payAmount}}.00</div>
+                </div>
+
+                <div class="widget-details">
+                    <div class="small bold text-uppercase">CREDIT</div>
+                    <div class="h5 no-margin">{{model.viewVariables.creditAmount}}.00</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 no-padding" style="animation: 0.6s zoomIn">
+        <div class="widget bg-white no-padding">
+            <a class="block text-center relative p15">
+                <div class="widget-bg-icon">
+                    <i ng-click="ui.viewJobCardDetailsList()" class="material-icons" style="font-size: 64px;">directions_car</i>
+                </div>
+                <div class="h5 mb0">
+                    <strong>NO OF VEHICLES</strong>
+                </div>
+            </a>
+
+            <div class="widget bg-blue mb0 text-center no-radius">
+                <div class="widget-details">
+                    <div class="small bold text-uppercase">ENTRANCE</div>
+                    <div class="h5 no-margin">{{model.viewVariables.totalJobCard}}</div>
+                </div>
+
+                <div class="widget-details">
+                    <div class="small bold text-uppercase">COMPLETE</div>
+                    <div class="h5 no-margin">{{model.viewVariables.compliteJobCard}}</div>
+                </div>
+
+                <div class="widget-details">
+                    <div class="small bold text-uppercase">PENDING</div>
+                    <div class="h5 no-margin">{{model.viewVariables.pendingJobCard}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 no-padding" style="animation: 0.7s zoomIn">
+        <div class="widget bg-white no-padding">
+            <a href="javascript:;" class="block text-center relative p15">
+                <div class="widget-bg-icon">
+                    <i class="material-icons" style="font-size: 64px;">rowing</i>
+                </div>
+                <div class="h5 mb0">
+                    <strong>NO OF EMPLOYEE</strong>
+                </div>
+            </a>
+
+            <div class="widget bg-danger mb0 text-center no-radius">
+                <div class="widget-details">
+                    <div class="small bold text-uppercase">TOTAL</div>
+                    <div class="h5 no-margin">12</div>
+                </div>
+
+                <div class="widget-details">
+                    <div class="small bold text-uppercase">PRESENT</div>
+                    <div class="h5 no-margin">11</div>
+                </div>
+
+                <div class="widget-details">
+                    <div class="small bold text-uppercase">ABSENT</div>
+                    <div class="h5 no-margin">1</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 no-padding" style="animation: 0.8s zoomIn">
+        <div class="widget bg-white no-padding">
+            <a href="javascript:;" class="block text-center relative p15">
+                <div class="widget-bg-icon">
+                    <i class="material-icons" style="font-size: 64px;">insert_emoticon</i>
+                </div>
+                <div class="h5 mb0"> <strong>CUSTOMER</strong>
+                </div>
+            </a>
+
+            <div class="widget bg-teal mb0 text-center no-radius">
+                <div class="widget-details">
+                    <div class="small bold text-uppercase">TOTAL</div>
+                    <div class="h5 no-margin">20</div>
+                </div>
+
+                <div class="widget-details">
+                    <div class="small bold text-uppercase">
+                        <span class="glyphicon glyphicon-thumbs-up"></span> 
+                        SATISFIED
+                    </div>
+                    <div class="h5 no-margin">12</div>
+                </div>
+
+                <div class="widget-details">
+                    <div class="small bold text-uppercase">
+                        <span class="glyphicon glyphicon-thumbs-down"></span> 
+                        UN SATISFIED
+                    </div>
+                    <div class="h5 no-margin">0</div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+<div class="col-md-8" ng-show="ui.mode === 'JOBCARD_DETAIL_CHART'">
+    <canvas 
+        id="line" 
+        class="chart chart-bar" 
+        chart-dataset-override="datasetOverride" 
+        chart-data="model.getJobCardDetailsListData.totalJobCardList" 
+        chart-labels="model.getJobCardDetailsListData.dateList" 
+        chart-colors="colors" 
+        chart-series="series" 
+        chart-options="options">
+    </canvas>
+</div>

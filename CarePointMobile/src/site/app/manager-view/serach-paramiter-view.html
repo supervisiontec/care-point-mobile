@@ -1,0 +1,27 @@
+<div class="col-lg-4">
+    <div class="form-group">
+        <label class="control-label">Branch</label>
+        <div>
+            <select class="form-control" ng-model="model.searchParamiter.branch">
+                <option value="{{branch.indexNo}}" ng-repeat="branch in model.branchList">
+                    {{branch.name}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">From Date</label>
+        <div>
+            <input type="date" class="form-control" ng-model="model.searchParamiter.fromDate">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">To Date</label>
+        <div>
+            <input type="date" class="form-control" ng-model="model.searchParamiter.toDate">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-facebook btn-block" ng-click="ui.searchParamiter(model.searchParamiter);">SEARCH</button>
+    </div>
+</div>
